@@ -62,3 +62,5 @@ sftp-config.json
 
 #custom
 git-ignore.*
+*.pdn
+*.psd

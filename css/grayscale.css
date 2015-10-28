@@ -47,9 +47,11 @@ a:focus {
 #profile {
   margin-bottom: 2em;
   /* box-shadow: 0 0 10px #FFB600; */
-  border: #fff solid 3px;
+  border: #A5FFD6 solid 3px;
+  box-shadow: 0px 0px 32px rgba(165, 255, 214, 0.33);
 }
 #copyright {
+  opacity: 0.5;
   font-size: 1em;
 }
 .light {
@@ -86,7 +88,7 @@ a:focus {
   transition: background 0.3s ease-in-out, color 0.2s;
 }
 .navbar-custom .nav li a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #A5FFD6;
   outline: none;
   background-color: transparent;
 }
@@ -323,6 +325,56 @@ body {
   padding-right: 2em;
   box-shadow: 0px 0px 100px black;
 }
+.carousel-caption p {
+  font-size: 60%;
+}
+@media (min-width: 768px) {
+  .carousel-caption p {
+    font-size: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-caption p {
+    font-size: 150%;
+  }
+}
+.carousel-caption h3 {
+  font-size: 90%;
+  margin-bottom: 0.5em;
+}
+@media (min-width: 768px) {
+  .carousel-caption h3 {
+    font-size: 150%;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-caption h3 {
+    font-size: 225%;
+  }
+}
 img.darken {
   opacity: 0.5;
+}
+.carousel {
+  border: 0.25em solid white;
+  border-radius: 0.2em;
+}
+.carousel .carousel-indicators .active {
+  background-color: #A5FFD6;
+  color: #A5FFD6;
+  border-color: #A5FFD6;
+}
+.cursive {
+  text-transform: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+.brand-ring {
+  color: #A5FFD6;
+}
+h2 .fa-chevron-right,
+h2 .fa-chevron-left {
+  color: #A5FFD6;
+}
+#about-desc {
+  font-size: 140%;
 }

@@ -30,10 +30,9 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
-$(document).ready(function() {
-    $('#mandelbrot').on('play', function() {
-        this.playbackRate = 0.5;
-    });
-});
+// $(document).ready(function() {
+//     $('.title').before('<i class="fa fa-chevron-right"></i>');
+//     $('.title').after('<i class="fa fa-chevron-left"></i>');
+// });
 // Google Maps Scripts
 // When the window has finished loading create our google map below
