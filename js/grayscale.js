@@ -25,6 +25,21 @@ $(function() {
 
 });
 
+function goToSlide(number) {
+    $("#portfolio-carousel").carousel(number);
+}
+
+$(document).ready(function() {
+    var url = window.location.href;
+    var start = url.lastIndexOf("target")+7
+    var end = url.lastIndexOf("#")
+    var slide = url.substring(start,end);
+
+    if (slide > -1) {
+        goToSlide(parseInt(slide))
+    }
+});
+
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
