@@ -25,7 +25,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 10000;
+        z-index: 10;
 
 
         width: 100%;
@@ -59,8 +59,8 @@
             background-color: rgb(40,40,40);
             
             
-            -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, .45);
-            box-shadow: 0 0 8px 0 rgba(0, 0, 0, .45);
+            -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, .45);
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, .45);
         }
 
             .galereya-cats-item {
@@ -68,8 +68,9 @@
 
                 padding: 1px 25px 1px 10px;
 
-                
+                color: rgb(200,200,200);
             }
+
 
                 .galereya-cats-item span {
                     font-size: 10pt;
@@ -194,7 +195,7 @@
         }
 
         .galereya-cell:hover {
-            z-index: 1000;
+            z-index: 9;
         }
 
             .galereya-cell:hover .galereya-cell-desc {
