@@ -180,8 +180,8 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus {
   outline: none;
-  color: white;
-  background: rgba(255, 255, 255, 0.3);
+  color: black;
+  background: #a5ffd6;
 }
 .btn-circle i.animated {
   -webkit-transition-property: -webkit-transform;

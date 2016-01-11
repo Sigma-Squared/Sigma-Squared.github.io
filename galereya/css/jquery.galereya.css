@@ -279,21 +279,22 @@
         }
 
         .galereya-slider-desc {
+            visibility: hidden;
             font-size: 10pt;
 
             position: absolute;
-            right: 0;
-            top: 0;
+            left: 20%;
+            bottom: 0;
 
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             padding: 10px 10px;
-            width: 22em;
-            height: 100%;
-            padding-top: 4em;
-            padding-left: 2em;
-            padding-right: 2em;
+            width: 60%;
+            height: 13em;
+            padding-top: 2em;
+            padding-left: 5em;
+            padding-right: 5em;
 
             text-align: center;
 
@@ -461,6 +462,10 @@
         -moz-transition: -moz-transform 1s ease-out;
         transition: transform 1s ease-out;
         -o-transition: none; /*Sorry Opera, you are slow enough*/
+    }
+    
+    .galereya-slider-desc {
+        visibility: visible;
     }
 }
 @media only screen and (min-width: 1025px) {
