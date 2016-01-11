@@ -1,12 +1,18 @@
+/*!
+ * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ * HEAVILY MODIFIED - By Chamu Rajasekera
+ */
+
 @import "variables.less";
-//@import "mixins.less";
 
 body {
     width: 100%;
     height: 100%;
-    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto","Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: white;
-    background-color: black;
+    background-color: rgb(10,10,10);
 }
 
 html {
@@ -20,17 +26,19 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    //margin: 0 0 35px;
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
+    font-size: 2.75em;
 }
 
 p {
     margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
+    color: rgb(200,200,200);
     @media(min-width:768px) {
         margin: 0 0 35px;
         font-size: 20px;
@@ -51,11 +59,12 @@ a {
 }
 
 #profile {
-    margin-bottom: 2em;
+    //margin-bottom: 2em;
     //border-radius: 50%;
     /* box-shadow: 0 0 10px #FFB600; */
-    border: @primary solid 3px;
-    box-shadow: 0px 0px 32px fade(@primary,33%);
+    border: @primary solid 5px;
+    margin-right: 1em;
+    //box-shadow: 0px 0px 32px fade(@primary,33%);
 }
 
 #copyright {
@@ -71,10 +80,10 @@ a {
 
 .navbar-custom {
     margin-bottom: 0;
-    border-bottom: 1px solid fade(white, 30%);
+    //border-bottom: 1px solid fade(white, 30%);
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: black;
+    background-color: rgb(10,10,10);
     .navbar-brand {
         font-weight: 700;
         &:focus {
@@ -131,8 +140,8 @@ a {
         transition: background .5s ease-in-out,padding .5s ease-in-out;
         &.top-nav-collapse {
             padding: 0;
-            background: black;
-            border-bottom: 1px solid fade(white, 30%);
+            background: rgb(50,50,50);
+            //border-bottom: 1px solid fade(white, 30%);
         }
     }
 }
@@ -144,7 +153,7 @@ a {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(../img/snowbackground.png) no-repeat bottom center scroll;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -180,19 +189,20 @@ a {
     height: 70px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid white;
+    //border: 3px solid white;
     border-radius: 100% !important;
     font-size: 40px;
-    color: @primary;
-    background: transparent;
+    color: white;//@primary;
+    background: fade(white, 10%);
+    //background: transparent;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
     &:hover,
     &:focus {
         outline: none;
-        color: @primary;
-        background: fade(white, 10%);
+        color: black;//fade(@primary, 30%);//@primary;//white;//@primary;
+        background: @primary;//fade(@primary, 30%);//fade(white, 30%);
     }
     i.animated {
         -webkit-transition-property: -webkit-transform;
@@ -432,4 +442,66 @@ h2 {
 
 #about-desc {
     font-size: 140%;
+}
+
+#collage {
+    width: 100%;
+    height: 0px;
+    background: gray;
+   background: #939393;
+background: -moz-linear-gradient(top,  #939393 0%, #e8e8e8 8%, #e8e8e8 91%, #a0a0a0 100%);
+background: -webkit-linear-gradient(top,  #939393 0%,#e8e8e8 8%,#e8e8e8 91%,#a0a0a0 100%);
+background: linear-gradient(to bottom,  #939393 0%,#e8e8e8 8%,#e8e8e8 91%,#a0a0a0 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#a0a0a0',GradientType=0 );
+
+    transition: height 0.66s ease-out;
+}
+
+#expand-icon {
+    transition: transform 0.5s;
+}
+
+#expand-button {
+    margin-bottom: 1em;
+}
+
+#expand-button:hover > #expand-icon {
+        transform: rotate(90deg);
+}
+.card {
+    padding: 2em;
+    background-color: rgb(30,30,30);
+    box-shadow: 0px 0px 24px black;
+    border-radius: 0.25em;
+    p {
+        margin-top: 1em;
+    }
+}
+
+.card-head {
+    padding:inherit;
+    margin-top: -2em;
+    margin-left: -2em;
+    margin-right: -2em;
+    //margin-bottom: -2em;
+    //padding-bottom: 0.5em;
+    background-color: rgb(40,40,40);
+}
+
+.sunken {
+    width: 100%;
+    height: 60em;
+    background-color: rgb(30,30,30);
+    box-shadow: inset 0px 0px 48px rgba(0,0,0,0.7);
+}
+
+#projects-title {
+    background-color: rgb(40,40,40);
+    box-shadow: 0px 0px 24px black;
+    width:100%;
+    padding: 0.5em;
+}
+
+#gal1 {
+    padding-top: 2em;
 }

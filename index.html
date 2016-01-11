@@ -1,6 +1,11 @@
+<!--
+ * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ * HEAVILY MODIFIED - By Chamu Rajasekera
+ -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     
     <meta charset="utf-8">
@@ -19,9 +24,13 @@
 
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
+    
+    <!-- galereya -->
+    <link href="galereya/css/jquery.galereya.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400italic' rel='stylesheet' type='text/css'>
@@ -49,13 +58,10 @@
     <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/manifest.json">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Chamu Rajasekera">
-    <meta name="application-name" content="Chamu Rajasekera">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a5ffd6">
+    <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
@@ -68,7 +74,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-circle-o brand-ring"></i> <span class="light">Chamu Rajasekera</span><span class="cursive">.me</span><!--<span class="light">Chamu</span> Rajasekera-->
+                    <i class="fa fa-circle-o brand-ring"></i> <span class="light">Chamu Rajasekera</span><span class="cursive">.me</span>
                 </a>
             </div>
 
@@ -107,7 +113,7 @@
                         <h5 class="brand-heading">Hello There!</h5>
                         <p class="intro-text">Nice to meet you. I'm Chamu. Software Engineering student and passionate programmer.<br>Get to know me.</p>
                         <a href="#about" id="button-scroll" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
+                            <i class="fa fa-angle-down animated"></i>
                         </a>
                     </div>
                 </div>
@@ -119,100 +125,98 @@
     <section id="about" class="container content-section text-center">
             <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <img class="img-circle" src="upload/profile.png" id="profile" alt="Chamu Rajasekera">
-                        <h2><i class="fa fa-chevron-right"></i> About Me <i class="fa fa-chevron-left"></i></h2>
+                       <div class="card">
+                           <div class="card-head">
+                            
+                            <h2><img class="img-circle" src="upload/profile.png" id="profile" alt="Chamu Rajasekera">About Me</h2>
+                           </div>
                         <p id="about-desc">I am an engineering student currently in my second year of Software Engineering &amp; Game Design at McMaster University. I am extremely passionate about programming, art, and design. I first started programming around the age of 13, and continued to hone and develop that skill for several years. I am addicted to learning — I often spend my free time attempting to learn things I find interesting. I love creating things; I find programming, game design, and web development the best outlets for my passion. At the moment, I am focusing on my academics as well as working on personal side projects, as well as looking for internships and co-op positions (so if you have one, let me know in the <a class="page-scroll" href="#contact">contact</a> section!).</p>
+                        </div>
                     </div>
             </div>
     </section>
     <!--<hr></hr>-->
     <!-- Download Section -->
     <section id="portfolio" class="content-section text-center">
-        <div class="container">
-            <h2><i class="fa fa-chevron-right"></i> Projects <i class="fa fa-chevron-left"></i></h2>
-            <div class="carousel slide" data-ride="carousel" data-interval="false" id="portfolio-carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#portfolio-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="1"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="2"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="3"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="4"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="5"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="6"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="7"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="8"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="9"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="10"></li>
-                    <li data-target="#portfolio-carousel" data-slide-to="11"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="portfolio-files/thebgfactory.jpg" class="darken">
-                        <div class="carousel-caption"><h3>TheBackgroundFactory</h3> <p><a href="http://thebackgroundfactory.github.io/thebgfactory/">TheBackgroundFactory</a> is a website made by myself and two of my colleagues as a project for Local Hack Day 2015. It showcases several dynamic javascript backgrounds that we created, for other web developers to embed into their sites. All the HTML/CSS, hosting, etc. was made by me as well as one of the backgrounds.</p></div>
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/thebgfactory.jpg">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/bg1.jpg">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/reflex-cover.jpg" alt="">
-                        <div class="carousel-caption">
-                            <h3>Reflex</h3>
-                            <p>Reflex was a game I started making about 5 years ago, at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/reflex1.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/reflex2.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/reflex3.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/blockout-cover.jpg" alt="">
-                        <div class="carousel-caption">
-                            <h3>Blockout</h3>
-                            <p><a href="http://gmc.yoyogames.com/index.php?showtopic=601376">Blockout</a> is an action-puzzle game I made for a "GameMaker Competition" that was held in my school board. It was made in about half a month using only <a href="http://www.yoyogames.com/studio">Game Maker</a> 8.0 Lite.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/blockout1.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/blockout2.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/failsafe-app-resized.jpg" alt="">
-                        <div class="carousel-caption">
-                            <h3>FailSafe</h3>
-                            <p>FailSafe was a project myself and two friends created for McMaster's Engineering Challenge. I created the front-end app, which used multithreading and sockets to communicate via the network to a server in a safe. This allowed you to control and view the status of your safe remotely. This project was started and completed in 12 hours, and won 2nd place.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="portfolio-files/failsafe-app-resized.jpg" alt="">
-                    </div>
+        <div id="projects-title"><h2>Projects</h2></div>
+            <div class="sunken">
+                <div id="gal1">
+                    <img
+                    src="portfolio-files/bgfactory-thumbnail.png"
+                    title="TheBackgroundFactory"
+                    data-desc='<a href="http://thebackgroundfactory.github.io/thebgfactory/">TheBackgroundFactory</a> is a website made by myself and two of my colleagues as a project for Local Hack Day 2015. It showcases several dynamic javascript backgrounds that we created, for other web developers to embed into their sites. All the HTML/CSS, hosting, etc. was made by me as well as one of the backgrounds.'
+                    data-category="TheBackgroundFactory"
+                    data-fullsrc="portfolio-files/thebgfactory.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/failsafe-thumbnail.png"
+                    title="FailSafe"
+                    data-desc="FailSafe was a project myself and two friends created for McMaster's Engineering Challenge. I created the front-end app, which used multithreading and sockets to communicate via the network to a server in a safe. This allowed you to control and view the status of your safe remotely. This project was started and completed in 12 hours, and won 2nd place."
+                    data-category="FailSafe"
+                    data-fullsrc="portfolio-files/failsafe-app-resized.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/reflex-thumbnail.png"
+                    title="Reflex"
+                    data-desc="Reflex was a game I started making about 5 years ago, at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing."
+                    data-category="Reflex"
+                    data-fullsrc="portfolio-files/reflex-cover.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/reflex1-thumbnail.png"
+                    title="Reflex"
+                    data-desc="Reflex was a game I started making about 5 years ago, at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing."
+                    data-category="Reflex"
+                    data-fullsrc="portfolio-files/reflex1.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/reflex2-thumbnail.png"
+                    title="Reflex"
+                    data-desc="Reflex was a game I started making about 5 years ago, at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing."
+                    data-category="Reflex"
+                    data-fullsrc="portfolio-files/reflex2.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/reflex3-thumbnail.png"
+                    title="Reflex"
+                    data-desc="Reflex was a game I started making about 5 years ago, at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing."
+                    data-category="Reflex"
+                    data-fullsrc="portfolio-files/reflex3.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/blockout-cover-thumbnail.png"
+                    title="Blockout"
+                    data-desc='<a href="http://gmc.yoyogames.com/index.php?showtopic=601376">Blockout</a> is an action-puzzle game I made for a "GameMaker Competition" that was held in my school board. It was made in about half a month using only <a href="http://www.yoyogames.com/studio">Game Maker</a> 8.0 Lite.'
+                    data-category="Blockout"
+                    data-fullsrc="portfolio-files/blockout-cover.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/blockout1-thumbnail.png"
+                    title="Blockout"
+                    data-desc='<a href="http://gmc.yoyogames.com/index.php?showtopic=601376">Blockout</a> is an action-puzzle game I made for a "GameMaker Competition" that was held in my school board. It was made in about half a month using only <a href="http://www.yoyogames.com/studio">Game Maker</a> 8.0 Lite.'
+                    data-category="Blockout"
+                    data-fullsrc="portfolio-files/blockout1.jpg" 
+                    />
+                    <img
+                    src="portfolio-files/blockout2-thumbnail.png"
+                    title="Blockout"
+                    data-desc='<a href="http://gmc.yoyogames.com/index.php?showtopic=601376">Blockout</a> is an action-puzzle game I made for a "GameMaker Competition" that was held in my school board. It was made in about half a month using only <a href="http://www.yoyogames.com/studio">Game Maker</a> 8.0 Lite.'
+                    data-category="Blockout"
+                    data-fullsrc="portfolio-files/blockout2.jpg" 
+                    />
                 </div>
-
-                <a href="#portfolio-carousel" class="left carousel-control" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a href="#portfolio-carousel" class="right carousel-control" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
             </div>
-        </div>
     </section>
     <!--<hr></hr>-->
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2><i class="fa fa-chevron-right"></i> Find Me <i class="fa fa-chevron-left"></i></h2>
-                <p>Feel free to contant me through any of the social media below, or through email.</p>
+               <div class="card">
+                   <div class="card-head">
+                    <h2>Find Me</h2>
+                   </div>
+                <p>Feel free to contact me through any of the social media below, or through email.</p>
                 <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="mailto:chamu.rajasekera@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope-square"></i> <span class="network-name">Email</span></a>
@@ -230,22 +234,11 @@
                 <br/>
                 <p>Looking to hire? I'm currently looking for internships and summer co-op positions, but feel free to cantact me for anything!</p>
                 <a href="upload/ResumeLatestLatex.pdf" class="btn btn-default"><i class="fa fa-download"></i> Download Resume (PDF)</a>
+                </div>
             </div>
         </div>
     </section>
     <!--<hr></hr>-->
-    <!--<section id="hire-me" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Hire Me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, excepturi maxime eligendi possimus animi at. Nam hic possimus eaque fugiat omnis, ea ipsa, ratione cupiditate odio dolores tempora, voluptatum culpa!</p>
-                <a href="upload/Resume.pdf" class="btn btn-default"><i class="fa fa-download"></i> Download Resume (PDF)</a>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- Map Section -->
-    <!--<div id="map"></div>-->
 
     <!-- Footer -->
     <footer>
@@ -265,6 +258,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+    
+    <!-- galereya -->
+    <script src="galereya/js/jquery.galereya.js"></script>
 
 </body>
 

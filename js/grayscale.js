@@ -2,6 +2,7 @@
  * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ * HEAVILY MODIFIED - By Chamu Rajasekera
  */
 
 // jQuery to collapse the navbar on scroll
@@ -38,6 +39,10 @@ $(document).ready(function() {
     if (slide > -1) {
         goToSlide(parseInt(slide))
     }
+    
+    $('#gal1').galereya({
+        wave: false
+    });
 });
 
 // Closes the Responsive Menu on Menu Item Click
@@ -45,6 +50,18 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
+
+var toggled = false;
+function expand() {
+    if (!toggled) {
+        $("#collage").height(200);
+        console.log("expanded");
+    } else {
+        $("#collage").height(0);
+        console.log("collapsed");
+    }
+    toggled = !toggled;
+}
 // $(document).ready(function() {
 //     $('.title').before('<i class="fa fa-chevron-right"></i>');
 //     $('.title').after('<i class="fa fa-chevron-left"></i>');
