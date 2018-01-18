@@ -1,0 +1,13 @@
+{
+"companyName": "ChamuRajasekera",
+"productName": "Nightmare",
+"dataUrl": "SurvivalShooterBuild.data.unityweb",
+"asmCodeUrl": "SurvivalShooterBuild.asm.code.unityweb",
+"asmMemoryUrl": "SurvivalShooterBuild.asm.memory.unityweb",
+"asmFrameworkUrl": "SurvivalShooterBuild.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
