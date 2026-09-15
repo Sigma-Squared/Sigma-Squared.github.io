@@ -219,6 +219,11 @@ a {
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 1.75rem;
+  /* Overrides .label, which also sizes the project-page kicker and should
+     stay small there. Declared after .label, so it wins on source order. */
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+  color: var(--ink);
 }
 
 .section__head::after {
