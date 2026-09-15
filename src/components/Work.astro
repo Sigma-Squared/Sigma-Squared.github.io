@@ -1,0 +1,59 @@
+---
+/**
+ * Work history and education, driven by src/data/experience.ts.
+ *
+ * Not currently rendered anywhere. To put it back on the front page, import
+ * it in src/pages/index.astro and drop <Work /> between the About and
+ * Projects sections, then add { href: '/#work', label: 'Work' } back to the
+ * nav array in src/layouts/Base.astro. The .roles / .role styles it needs
+ * are still in global.css.
+ */
+import { roles, education } from '../data/experience';
+---
+
+<section id="work" class="section">
+  <div class="wrap wrap--wide">
+    <h2 class="section__head label">Work</h2>
+    <ol class="roles">
+      {
+        roles.map((role) => (
+          <li class="role">
+            <div class="role__when">
+              <span class="role__period">{role.period}</span>
+              <span class="role__where">{role.location}</span>
+            </div>
+            <div class="role__what">
+              <h3 class="role__title">
+                {role.title}, <span class="role__org">{role.org}</span>
+              </h3>
+              {role.note && (
+                <p class="role__note">
+                  {role.note}
+                  {role.href && (
+                    <>
+                      {' '}
+                      <a href={role.href}>Power&nbsp;Fx on GitHub</a>
+                    </>
+                  )}
+                </p>
+              )}
+            </div>
+          </li>
+        ))
+      }
+      <li class="role">
+        <div class="role__when">
+          <span class="role__period">{education.period}</span>
+          <span class="role__where">Hamilton, Ontario</span>
+          <span class="role__kind">Education</span>
+        </div>
+        <div class="role__what">
+          <h3 class="role__title">
+            {education.programme}, <span class="role__org">{education.school}</span>
+          </h3>
+          <p class="role__note">{education.note}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

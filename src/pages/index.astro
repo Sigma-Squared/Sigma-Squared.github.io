@@ -4,7 +4,6 @@ import BlurImage from '../components/BlurImage.astro';
 import { Image } from 'astro:assets';
 import { getImage } from '../lib/images';
 import { projects } from '../data/projects';
-import { roles, education } from '../data/experience';
 import { firstSentence } from '../lib/text';
 
 const profile = getImage('profile.png');
@@ -50,52 +49,9 @@ const profile = getImage('profile.png');
     </div>
   </section>
 
-  <section id="work" class="section">
-    <div class="wrap wrap--wide">
-      <h2 class="section__head label">Work</h2>
-      <ol class="roles">
-        {
-          roles.map((role) => (
-            <li class="role">
-              <div class="role__when">
-                <span class="role__period">{role.period}</span>
-                <span class="role__where">{role.location}</span>
-              </div>
-              <div class="role__what">
-                <h3 class="role__title">
-                  {role.title}, <span class="role__org">{role.org}</span>
-                </h3>
-                {role.note && (
-                  <p class="role__note">
-                    {role.note}
-                    {role.href && (
-                      <>
-                        {' '}
-                        <a href={role.href}>Power&nbsp;Fx on GitHub</a>
-                      </>
-                    )}
-                  </p>
-                )}
-              </div>
-            </li>
-          ))
-        }
-        <li class="role">
-          <div class="role__when">
-            <span class="role__period">{education.period}</span>
-            <span class="role__where">Hamilton, Ontario</span>
-            <span class="role__kind">Education</span>
-          </div>
-          <div class="role__what">
-            <h3 class="role__title">
-              {education.programme}, <span class="role__org">{education.school}</span>
-            </h3>
-            <p class="role__note">{education.note}</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+
+  {/* Work history lives in src/components/Work.astro. Import it and render
+      <Work /> here to show it again. */}
 
   <section id="projects" class="section">
     <div class="wrap wrap--wide">
@@ -148,6 +104,11 @@ const profile = getImage('profile.png');
       <ul class="inline-list">
         <li><a class="rule-link" href="mailto:chamu.rajasekera@gmail.com">Email</a></li>
         <li><a class="rule-link" href="https://github.com/Sigma-Squared">Github</a></li>
+        <li>
+          <a class="rule-link" href="https://github.com/Chamu-Rajasekera">
+            Github (MSFT)
+          </a>
+        </li>
         <li>
           <a class="rule-link" href="https://www.hackerrank.com/SigmaSquared">
             HackerRank
