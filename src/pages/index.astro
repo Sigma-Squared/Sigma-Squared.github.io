@@ -28,22 +28,24 @@ const profile = getImage('profile.png');
   <section id="about" class="section about">
     <div class="wrap wrap--wide">
       <h2 class="section__head label">About Me</h2>
-      <Image
-        class="portrait"
-        src={profile}
-        alt="Chamu Rajasekera"
-        width={256}
-        height={256}
-        loading="lazy"
-      />
-      <div class="prose">
+      <div class="about__layout">
+        <Image
+          class="portrait"
+          src={profile}
+          alt="Chamu Rajasekera"
+          width={256}
+          height={256}
+          loading="lazy"
+        />
+        <div class="prose">
         <p>
           I first started programming around the age of 13, and I'm still addicted to
           learning. Most of my experience since has been in programming languages and
           optimization, and I often spend my free time attempting to learn things I find
           interesting. I love creating things; I find programming, game design, and web
           development the best outlets for my passion.
-        </p>
+          </p>
+        </div>
       </div>
     </div>
   </section>

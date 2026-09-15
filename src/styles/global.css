@@ -252,21 +252,27 @@ a:hover {
   max-width: none;
 }
 
-/* The portrait sits in the text the way a newspaper cut would. */
+/* Same two-column rhythm as the Work rows below, so the text in every
+   section starts at the same left edge. */
+.about__layout {
+  display: grid;
+  gap: 1.25rem 2rem;
+  align-items: start;
+}
+
+@media (min-width: 40rem) {
+  .about__layout {
+    grid-template-columns: 11rem 1fr;
+  }
+}
+
 .portrait {
-  float: left;
-  width: clamp(5rem, 22vw, 6.5rem);
+  width: clamp(5rem, 22vw, 7.5rem);
   aspect-ratio: 1;
   object-fit: cover;
   margin: 0.3rem 1.25rem 0.5rem 0;
   border: 1px solid var(--rule);
   filter: grayscale(1) contrast(1.05);
-}
-
-.about::after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 
@@ -578,26 +584,6 @@ a:hover {
 .rule-link:hover {
   color: var(--ink-faint);
   border-bottom-color: var(--ink-faint);
-}
-
-/* --------------------------------------------------------------------------
-   Colophon
-   -------------------------------------------------------------------------- */
-
-.colophon {
-  padding: 1.5rem 0 3rem;
-  border-top: 3px solid var(--rule-strong);
-  margin-top: 3rem;
-}
-
-.colophon__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 1.5rem;
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  color: var(--ink-faint);
 }
 
 /* -------------------------------------------------------------------------- */
