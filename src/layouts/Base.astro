@@ -10,9 +10,11 @@ interface Props {
 
 const { title, description, path = Astro.url.pathname } = Astro.props;
 const canonical = new URL(path, Astro.site ?? 'https://www.chamurajasekera.me').href;
+const year = new Date().getFullYear();
 
 const nav = [
   { href: '/#about', label: 'About Me' },
+  { href: '/#work', label: 'Work' },
   { href: '/#projects', label: 'Projects' },
   { href: '/#contact', label: 'Contact' },
 ];
@@ -68,7 +70,7 @@ const nav = [
 
     <footer class="colophon">
       <div class="wrap wrap--wide colophon__inner">
-        <p>Copyright &copy; Chamu Rajasekera 2016</p>
+        <p>Copyright &copy; Chamu Rajasekera {year}</p>
         <p>
           <a href="mailto:chamu.rajasekera@gmail.com">Email</a> &middot;
           <a href="https://github.com/Sigma-Squared">Github</a> &middot;

@@ -281,6 +281,81 @@ a:hover {
   }
 }
 
+
+/* --------------------------------------------------------------------------
+   Work history
+   -------------------------------------------------------------------------- */
+
+.section__note {
+  max-width: var(--measure);
+  margin: -1rem 0 1.75rem;
+  color: var(--ink-soft);
+}
+
+.roles {
+  list-style: none;
+  padding: 0;
+  counter-reset: none;
+}
+
+.role {
+  display: grid;
+  gap: 0.2rem 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.role:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+@media (min-width: 40rem) {
+  .role {
+    grid-template-columns: 11rem 1fr;
+  }
+}
+
+.role__when {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.role__period {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.role__kind {
+  margin-top: 0.35rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.role__title {
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+}
+
+.role__org {
+  font-style: italic;
+}
+
+.role__note {
+  margin-top: 0.3rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
 /* --------------------------------------------------------------------------
    Project index — a list of stories
    -------------------------------------------------------------------------- */

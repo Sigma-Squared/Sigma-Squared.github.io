@@ -4,6 +4,7 @@ import BlurImage from '../components/BlurImage.astro';
 import { Image } from 'astro:assets';
 import { getImage } from '../lib/images';
 import { projects } from '../data/projects';
+import { roles, education } from '../data/experience';
 import { firstSentence } from '../lib/text';
 
 const profile = getImage('profile.png');
@@ -11,15 +12,15 @@ const profile = getImage('profile.png');
 
 <Base
   title="Chamu Rajasekera"
-  description="Chamu Rajasekera's Personal Website"
+  description="Chamu Rajasekera — senior software engineer at Microsoft, working on Power Apps and the Power Fx language."
   path="/"
 >
   <section class="lede">
     <div class="wrap">
       <h1 class="lede__headline">Hello There!</h1>
       <p class="lede__text">
-        Nice to meet you. I'm Chamu. Software Engineering student and passionate
-        programmer. Get to know me.
+        Nice to meet you. I'm Chamu. Senior software engineer at Microsoft and
+        passionate programmer. Get to know me.
       </p>
     </div>
   </section>
@@ -37,27 +38,81 @@ const profile = getImage('profile.png');
       />
       <div class="prose">
         <p>
-          I am an engineering student currently in my third year of Software
-          Engineering &amp; Game Design at McMaster University. I am extremely
-          passionate about programming, art, and design. I first started programming
-          around the age of 13, and continued to hone and develop that skill for
-          several years.
+          I'm a senior software engineer at Microsoft in Redmond, where I work on Power
+          Apps and its integrated <a href="https://github.com/microsoft/Power-Fx">Power
+          Fx</a> language. I've been with the team since 2019, and on Power Fx since
+          2021.
         </p>
         <p>
-          I am addicted to learning — I often spend my free time attempting to learn
-          things I find interesting. I love creating things; I find programming, game
-          design, and web development the best outlets for my passion. At the moment, I
-          am focusing on my academics as well as working on personal side projects, as
-          well as looking for internships and co-op positions (so if you have one, let
-          me know in the <a href="#contact">contact</a> section!).
+          I graduated from McMaster University in 2019 with a degree in Software
+          Engineering &amp; Game Design, on the Dean's Honour List. Before Microsoft I
+          interned at Intel's Programmable Solutions Group in San Jose, first on physical
+          synthesis optimization and verification, then on the infrastructure and build
+          team.
+        </p>
+        <p>
+          I first started programming around the age of 13, and I'm still addicted to
+          learning — I often spend my free time attempting to learn things I find
+          interesting. I love creating things; I find programming, game design, and web
+          development the best outlets for my passion.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="wrap wrap--wide">
+      <h2 class="section__head label">Work</h2>
+      <ol class="roles">
+        {
+          roles.map((role) => (
+            <li class="role">
+              <div class="role__when">
+                <span class="role__period">{role.period}</span>
+                <span class="role__where">{role.location}</span>
+              </div>
+              <div class="role__what">
+                <h3 class="role__title">
+                  {role.title}, <span class="role__org">{role.org}</span>
+                </h3>
+                {role.note && (
+                  <p class="role__note">
+                    {role.note}
+                    {role.href && (
+                      <>
+                        {' '}
+                        <a href={role.href}>Power&nbsp;Fx on GitHub</a>
+                      </>
+                    )}
+                  </p>
+                )}
+              </div>
+            </li>
+          ))
+        }
+        <li class="role">
+          <div class="role__when">
+            <span class="role__period">{education.period}</span>
+            <span class="role__where">Hamilton, Ontario</span>
+            <span class="role__kind">Education</span>
+          </div>
+          <div class="role__what">
+            <h3 class="role__title">
+              {education.programme}, <span class="role__org">{education.school}</span>
+            </h3>
+            <p class="role__note">{education.note}</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
   <section id="projects" class="section">
     <div class="wrap wrap--wide">
       <h2 class="section__head label">Projects</h2>
+      <p class="section__note">
+        Games, hackathon builds, and side projects from my school and university years.
+      </p>
       <ul class="stories">
         {
           projects.map((project, i) => (
@@ -104,6 +159,11 @@ const profile = getImage('profile.png');
         <li><a class="rule-link" href="mailto:chamu.rajasekera@gmail.com">Email</a></li>
         <li><a class="rule-link" href="https://github.com/Sigma-Squared">Github</a></li>
         <li>
+          <a class="rule-link" href="https://www.hackerrank.com/SigmaSquared">
+            HackerRank
+          </a>
+        </li>
+        <li>
           <a class="rule-link" href="https://ca.linkedin.com/in/chamurajasekera">
             LinkedIn
           </a>
@@ -111,8 +171,7 @@ const profile = getImage('profile.png');
       </ul>
       <div class="prose" style="margin-top:1.75rem">
         <p>
-          Looking to hire? I'm currently looking for internships and summer co-op
-          positions, but feel free to contact me for anything!
+          Feel free to contact me about anything.
         </p>
       </div>
       <p class="inline-list">
