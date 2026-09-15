@@ -59,8 +59,16 @@ export const projects: Project[] = [
       'A Bluetooth audio receiver for a Mazda Miata, built on an ESP32. It pairs as an A2DP sink so a phone can stream audio to the car, with a small display and physical buttons for control. A PlatformIO project on the Arduino framework, targeting a DOIT ESP32 DevKit V1.',
     ],
     links: [{ label: 'Source on GitHub', href: 'https://github.com/Sigma-Squared/miatamoto' }],
-    placeholder: 'ESP32',
-    gallery: [],
+    cover: {
+      path: 'portfolio/miatamoto.jpg',
+      alt: 'The display fitted into the Miata\u2019s Bose head unit, showing the current track',
+    },
+    gallery: [
+      {
+        path: 'portfolio/miatamoto.jpg',
+        alt: 'The display fitted into the Miata\u2019s Bose head unit, showing the current track',
+      },
+    ],
   },
   {
     slug: 'flipdots',
