@@ -4,7 +4,7 @@
  * Each image is reduced to a ~20px-wide WebP and inlined as a base64 data URI in
  * src/generated/lqip.json, keyed by its path relative to src/images. BlurImage.astro
  * paints that data URI as a background behind the real <img>, so the blurred preview
- * is visible until the full image decodes and paints over it — no client JS required.
+ * is visible until the full image decodes and paints over it, with no client JS required.
  */
 import { readdir, readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { join, relative, extname } from 'node:path';

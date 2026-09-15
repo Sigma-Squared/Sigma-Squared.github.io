@@ -1,6 +1,6 @@
 # chamurajasekera.me
 
-Personal website. Static HTML and CSS — **no JavaScript is shipped to the browser**.
+Personal website. Static HTML and CSS. **No JavaScript is shipped to the browser.**
 
 Built with [Astro](https://astro.build), which runs only at build time.
 
@@ -22,7 +22,7 @@ npm run dev      # http://localhost:4321, live reload
 
 ```
 src/
-  data/projects.ts        Project copy and image lists — edit this to change content
+  data/projects.ts        Project copy and image lists; edit this to change content
   pages/index.astro       Front page
   pages/projects/[slug]   One page per project, generated from projects.ts
   components/BlurImage    Optimized <img> with a zero-JS blur-up placeholder
@@ -35,8 +35,8 @@ scripts/gen-lqip.mjs      Generates the base64 blur placeholders
 ### Adding a project
 
 Append an entry to `src/data/projects.ts` and drop its images in `src/images/portfolio/`.
-Image paths are relative to `src/images`. Everything else — the index entry, the project
-page, the prev/next links, the responsive `srcset`, the blur placeholder — follows.
+Image paths are relative to `src/images`. Everything else follows: the index entry, the
+project page, the prev/next links, the responsive `srcset`, and the blur placeholder.
 
 ## How the blur-up works without JavaScript
 
@@ -50,7 +50,7 @@ event, no script.
 
 Pushing to `master` triggers `.github/workflows/deploy.yml`, which builds and publishes to
 GitHub Pages. This requires **Settings → Pages → Source = GitHub Actions** (not "Deploy from
-a branch") — Pages cannot run the Astro build on its own.
+a branch"), because Pages cannot run the Astro build on its own.
 
 ## Credits
 

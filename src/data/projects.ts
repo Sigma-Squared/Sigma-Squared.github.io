@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: 'MagicMirror',
     description: [
       'MagicMirror adds an adventure-friendly recovery mechanic to Minecraft, similar to the <a href="https://terraria.fandom.com/wiki/Magic_Mirrors">Magic Mirror</a> in Terraria. It uses the underutilized recovery compass: right click anywhere and, after a short countdown, you are teleported back to your <code>/sethome</code>, player spawn, or world spawn, whichever is available first, with particle and sound effects along the way.',
-      'It is built to need zero configuration, even by players, and to stay survival-focused — the windup stops teleportation from being abused mid-fight, and the plugin checks a player’s home is clear before dropping them into it. Most features can be turned off in <code>config.yml</code>, and the <code>item-name</code> setting can restrict the effect to recovery compasses renamed in an anvil.',
+      'It is built to need zero configuration, even by players, and to stay survival-focused. The windup stops teleportation from being abused mid-fight, and the plugin checks a player’s home is clear before dropping them into it. Most features can be turned off in <code>config.yml</code>, and the <code>item-name</code> setting can restrict the effect to recovery compasses renamed in an anvil.',
       'It runs on Bukkit, Spigot, and Paper servers across Minecraft 1.21 to 1.21.5, under an MIT licence.',
     ],
     links: [

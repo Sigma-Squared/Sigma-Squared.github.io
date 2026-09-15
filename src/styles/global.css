@@ -269,19 +269,6 @@ a:hover {
   clear: both;
 }
 
-@media (min-width: 40rem) {
-  .about .prose {
-    max-width: none;
-    columns: 2;
-    column-gap: 2.5rem;
-    column-rule: 1px solid var(--rule);
-  }
-
-  .about .prose p + p {
-    margin-top: 0;
-  }
-}
-
 
 /* --------------------------------------------------------------------------
    Work history
@@ -358,7 +345,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   Project index — a list of stories
+   Project index: a list of stories
    -------------------------------------------------------------------------- */
 
 .stories {
