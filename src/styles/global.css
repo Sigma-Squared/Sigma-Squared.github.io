@@ -1,23 +1,28 @@
 /* ==========================================================================
    chamurajasekera.me
-   A minimal newsprint theme. Serif type, hairline rules, no colour,
+   A typewriter theme: Cutive Mono on paper, hairline rules, no colour,
    no shadows, no script.
+
+   Cutive Mono ships a single 400 weight and no italic, so hierarchy comes
+   from case, letter spacing and rules rather than from bold and oblique,
+   which the browser would otherwise synthesise.
    ========================================================================== */
 
 :root {
   --paper: #fbfaf7;
-  --ink: #111110;
-  --ink-soft: #3a3a37;
-  --ink-faint: #6e6e69;
+  --ink: #07070a;
+  --ink-soft: #1c1c1a;
+  --ink-faint: #4f4f49;
   --rule: #d6d4cc;
-  --rule-strong: #111110;
+  --rule-strong: #07070a;
 
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
-    "Times New Roman", Times, serif;
-  --sans: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --type: "Cutive Mono", "Courier New", Courier, monospace;
+  /* Kept as aliases so existing rules do not all need rewriting. */
+  --serif: var(--type);
+  --sans: var(--type);
+  --mono: var(--type);
 
-  --measure: 34rem;
+  --measure: 68ch;
   --page: 46rem;
   --page-wide: 62rem;
   --gutter: clamp(1.25rem, 5vw, 2.5rem);
@@ -46,12 +51,14 @@ html {
 body {
   min-height: 100svh;
   overflow-wrap: break-word;
-  font-family: var(--serif);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-family: var(--type);
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--ink);
   background: var(--paper);
-  -webkit-font-smoothing: antialiased;
+  /* Cutive Mono has a single light weight. A hairline stroke thickens the
+     strokes the way ribbon ink would, without faking a bold. */
+  -webkit-text-stroke: 0.04em currentColor;
 }
 
 img,
@@ -118,7 +125,7 @@ a:hover {
 .label {
   font-family: var(--sans);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -134,26 +141,21 @@ a:hover {
 }
 
 .masthead__title {
-  font-family: var(--serif);
+  font-family: var(--type);
   font-weight: 400;
-  font-size: clamp(2.25rem, 9vw, 4.25rem);
-  line-height: 1;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.5rem, 6vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .masthead__title a {
   text-decoration: none;
 }
 
-.masthead__rule {
-  border: 0;
-  border-top: 3px solid var(--rule-strong);
-  border-bottom: 1px solid var(--rule-strong);
-  height: 3px;
-  margin-top: 1.25rem;
-}
-
 .masthead__bar {
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule-strong);
 }
 
@@ -177,7 +179,7 @@ a:hover {
   text-decoration: none;
   font-family: var(--sans);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -199,16 +201,16 @@ a:hover {
 
 .lede__headline {
   font-weight: 400;
-  font-size: clamp(2rem, 7vw, 3.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
   margin-bottom: 1rem;
 }
 
 .lede__text {
-  max-width: 30rem;
+  max-width: 52ch;
   margin-inline: auto;
-  font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+  font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
   color: var(--ink-soft);
   text-wrap: pretty;
 }
@@ -244,8 +246,7 @@ a:hover {
 }
 
 .prose p + p {
-  margin-top: 0.85em;
-  text-indent: 1.5em;
+  margin-top: 1.2em;
 }
 
 .prose--wide {
@@ -319,7 +320,7 @@ a:hover {
 }
 
 .role__period {
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--ink-soft);
   font-variant-numeric: tabular-nums;
@@ -328,19 +329,21 @@ a:hover {
 .role__kind {
   margin-top: 0.35rem;
   font-size: 0.625rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .role__title {
   font-weight: 400;
-  font-size: 1.1875rem;
-  line-height: 1.25;
+  font-size: 1.0625rem;
+  line-height: 1.4;
 }
 
 .role__org {
-  font-style: italic;
+  /* No italic in Cutive Mono, and an underline would read as a link, so the
+     employer is simply set plain after the comma. */
+  color: var(--ink-soft);
 }
 
 .role__note {
@@ -419,9 +422,9 @@ a:hover {
 
 .story__headline {
   font-weight: 400;
-  font-size: 1.4375rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 .story__headline a {
@@ -444,7 +447,7 @@ a:hover {
   min-height: 2.75rem;
   font-family: var(--sans);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -461,9 +464,9 @@ a:hover {
 
 .article__headline {
   font-weight: 400;
-  font-size: clamp(2rem, 7vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 5vw, 2.125rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
   padding-bottom: 1rem;
   border-bottom: 3px solid var(--rule-strong);
   margin-bottom: 1.5rem;
@@ -471,7 +474,7 @@ a:hover {
 
 .article__body {
   max-width: var(--measure);
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .article__body code,
@@ -485,17 +488,7 @@ a:hover {
 }
 
 .article__body p + p {
-  margin-top: 0.85em;
-  text-indent: 1.5em;
-}
-
-/* Drop cap, because it is a newspaper. */
-.article__body--dropcap > p:first-of-type::first-letter {
-  float: left;
-  font-size: 3.4em;
-  line-height: 0.82;
-  padding-right: 0.08em;
-  margin-top: 0.04em;
+  margin-top: 1.2em;
 }
 
 .plate {
@@ -574,7 +567,7 @@ a:hover {
   padding: 0.35rem 0;
   font-family: var(--sans);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;

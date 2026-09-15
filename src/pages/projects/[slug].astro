@@ -26,7 +26,6 @@ const { project, prev, next } = Astro.props;
 const plain = toPlainText(project.description[0]);
 // A drop cap on a paragraph that opens with a link splits the link's first
 // letter away from the underlined remainder, so only use one on plain text.
-const dropCap = !/^\s*</.test(project.description[0]);
 ---
 
 <Base
@@ -54,7 +53,7 @@ const dropCap = !/^\s*</.test(project.description[0]);
         )
       }
 
-      <div class:list={['article__body', dropCap && 'article__body--dropcap']}>
+      <div class="article__body">
         {project.description.map((para) => (
           <p set:html={para} />
         ))}
