@@ -116,7 +116,7 @@ export const projects: Project[] = [
     slug: 'reflex',
     title: 'Reflex',
     description: [
-      'Reflex was a game I started making about 5 years ago, at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing.',
+      'Reflex was a game I started making at the age of 14. It was an experiment to test my own programming ability and see how far I could go as a one man army. All the art and programming was done by myself, and the development progressed for about a year, ending when I started highschool. The game features state based AI, ragdoll physics, particle systems, and post-processing.',
     ],
     cover: { path: 'portfolio/reflex-thumbnail.png', alt: 'Reflex' },
     gallery: [
