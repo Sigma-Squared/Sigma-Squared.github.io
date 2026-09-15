@@ -63,21 +63,30 @@ const profile = getImage('profile.png');
         {
           projects.map((project, i) => (
             <li class="story">
-              {project.cover ? (
-                <BlurImage
-                  class="story__media"
-                  path={project.cover.path}
-                  alt={project.cover.alt}
-                  ratio="16 / 10"
-                  sizes="(min-width: 34rem) 9rem, 92vw"
-                  widths={[288, 432, 640]}
-                  eager={i < 2}
-                />
-              ) : (
-                <div class="story__media story__media--blank" aria-hidden="true">
-                  {project.placeholder}
-                </div>
-              )}
+              {/* Repeats the headline link, so it is hidden from screen readers
+                  and taken out of the tab order rather than duplicating it. */}
+              <a
+                class="story__thumb"
+                href={`/projects/${project.slug}`}
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                {project.cover ? (
+                  <BlurImage
+                    class="story__media"
+                    path={project.cover.path}
+                    alt={project.cover.alt}
+                    ratio="16 / 10"
+                    sizes="(min-width: 34rem) 9rem, 92vw"
+                    widths={[288, 432, 640]}
+                    eager={i < 2}
+                  />
+                ) : (
+                  <span class="story__media story__media--blank">
+                    {project.placeholder}
+                  </span>
+                )}
+              </a>
               <h3 class="story__headline">
                 <a href={`/projects/${project.slug}`}>{project.title}</a>
               </h3>
@@ -102,7 +111,7 @@ const profile = getImage('profile.png');
         </p>
       </div>
       <ul class="inline-list">
-        <li><a class="rule-link" href="mailto:chamu.rajasekera@gmail.com">Email</a></li>
+        <li><a class="rule-link" href="mailto:hello@chamurajasekera.me">Email</a></li>
         <li><a class="rule-link" href="https://github.com/Sigma-Squared">Github</a></li>
         <li>
           <a class="rule-link" href="https://github.com/Chamu-Rajasekera">

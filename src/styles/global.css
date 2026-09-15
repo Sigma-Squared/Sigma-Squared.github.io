@@ -371,12 +371,18 @@ a {
     align-items: start;
   }
 
-  .story__media {
+  .story__thumb {
     grid-row: span 3;
   }
 }
 
+.story__thumb {
+  display: block;
+  text-decoration: none;
+}
+
 .story__media {
+  display: block;
   border: 1px solid var(--rule);
 }
 

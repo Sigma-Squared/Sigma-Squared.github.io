@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www.chamurajasekera.me',
+  site: 'https://chamurajasekera.me',
   trailingSlash: 'ignore',
   build: { format: 'directory' },
   image: {

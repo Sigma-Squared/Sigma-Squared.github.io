@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { title, description, path = Astro.url.pathname } = Astro.props;
-const canonical = new URL(path, Astro.site ?? 'https://www.chamurajasekera.me').href;
+const canonical = new URL(path, Astro.site ?? 'https://chamurajasekera.me').href;
 
 const nav = [
   { href: '/#about', label: 'About Me' },
