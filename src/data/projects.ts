@@ -104,8 +104,16 @@ export const projects: Project[] = [
     title: 'Nightmare',
     description: ['A game built in Unity and compiled to WebGL, playable in the browser.'],
     playHref: '/unityss/index.html',
-    placeholder: 'Unity',
-    gallery: [],
+    cover: {
+      path: 'portfolio/nightmare.jpg',
+      alt: 'Nightmare gameplay: the player surrounded by enemies in a toy-strewn bedroom',
+    },
+    gallery: [
+      {
+        path: 'portfolio/nightmare.jpg',
+        alt: 'Nightmare gameplay: the player surrounded by enemies in a toy-strewn bedroom',
+      },
+    ],
   },
   {
     slug: 'blockout',
