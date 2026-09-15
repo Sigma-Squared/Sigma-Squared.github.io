@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import BlurImage from '../components/BlurImage.astro';
+import { Image } from 'astro:assets';
+import { getImage } from '../lib/images';
+import { projects } from '../data/projects';
+import { firstSentence } from '../lib/text';
+
+const profile = getImage('profile.png');
+---
+
+<Base
+  title="Chamu Rajasekera"
+  description="Chamu Rajasekera's Personal Website"
+  path="/"
+>
+  <section class="lede">
+    <div class="wrap">
+      <h1 class="lede__headline">Hello There!</h1>
+      <p class="lede__text">
+        Nice to meet you. I'm Chamu. Software Engineering student and passionate
+        programmer. Get to know me.
+      </p>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="wrap wrap--wide">
+      <h2 class="section__head label">About Me</h2>
+      <Image
+        class="portrait"
+        src={profile}
+        alt="Chamu Rajasekera"
+        width={256}
+        height={256}
+        loading="lazy"
+      />
+      <div class="prose">
+        <p>
+          I am an engineering student currently in my third year of Software
+          Engineering &amp; Game Design at McMaster University. I am extremely
+          passionate about programming, art, and design. I first started programming
+          around the age of 13, and continued to hone and develop that skill for
+          several years.
+        </p>
+        <p>
+          I am addicted to learning — I often spend my free time attempting to learn
+          things I find interesting. I love creating things; I find programming, game
+          design, and web development the best outlets for my passion. At the moment, I
+          am focusing on my academics as well as working on personal side projects, as
+          well as looking for internships and co-op positions (so if you have one, let
+          me know in the <a href="#contact">contact</a> section!).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="wrap wrap--wide">
+      <h2 class="section__head label">Projects</h2>
+      <ul class="stories">
+        {
+          projects.map((project, i) => (
+            <li class="story">
+              {project.cover ? (
+                <BlurImage
+                  class="story__media"
+                  path={project.cover.path}
+                  alt={project.cover.alt}
+                  ratio="16 / 10"
+                  sizes="(min-width: 34rem) 9rem, 92vw"
+                  widths={[288, 432, 640]}
+                  eager={i < 2}
+                />
+              ) : (
+                <div class="story__media story__media--blank" aria-hidden="true">
+                  Unity
+                </div>
+              )}
+              <h3 class="story__headline">
+                <a href={`/projects/${project.slug}`}>{project.title}</a>
+              </h3>
+              <p class="story__standfirst">{firstSentence(project.description)}</p>
+              <p class="story__more">
+                <a href={`/projects/${project.slug}`}>Read more &rarr;</a>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap wrap--wide">
+      <h2 class="section__head label">Find Me</h2>
+      <div class="prose">
+        <p>
+          Feel free to contact me through any of the social media below, or through
+          email.
+        </p>
+      </div>
+      <ul class="inline-list">
+        <li><a class="rule-link" href="mailto:chamu.rajasekera@gmail.com">Email</a></li>
+        <li><a class="rule-link" href="https://github.com/Sigma-Squared">Github</a></li>
+        <li>
+          <a class="rule-link" href="https://ca.linkedin.com/in/chamurajasekera">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div class="prose" style="margin-top:1.75rem">
+        <p>
+          Looking to hire? I'm currently looking for internships and summer co-op
+          positions, but feel free to contact me for anything!
+        </p>
+      </div>
+      <p class="inline-list">
+        <a class="rule-link" href="/upload/ResumeLatestLatex.pdf">
+          Download Resume (PDF)
+        </a>
+      </p>
+    </div>
+  </section>
+</Base>

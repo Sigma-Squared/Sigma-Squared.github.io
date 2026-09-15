@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path for the canonical URL, e.g. "/projects/reflex". */
+  path?: string;
+}
+
+const { title, description, path = Astro.url.pathname } = Astro.props;
+const canonical = new URL(path, Astro.site ?? 'https://www.chamurajasekera.me').href;
+
+const nav = [
+  { href: '/#about', label: 'About Me' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#contact', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="author" content="Chamu Rajasekera" />
+    <meta name="keywords" content="chamu,rajasekera,chamurajasekera" />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" sizes="180x180" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#111110" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#fbfaf7" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="wrap wrap--wide">
+        <p class="masthead__title">
+          <a href="/">Chamu Rajasekera</a>
+        </p>
+        <hr class="masthead__rule" />
+      </div>
+      <nav class="masthead__bar" aria-label="Primary">
+        <div class="wrap wrap--wide masthead__links">
+          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="colophon">
+      <div class="wrap wrap--wide colophon__inner">
+        <p>Copyright &copy; Chamu Rajasekera 2016</p>
+        <p>
+          <a href="mailto:chamu.rajasekera@gmail.com">Email</a> &middot;
+          <a href="https://github.com/Sigma-Squared">Github</a> &middot;
+          <a href="https://ca.linkedin.com/in/chamurajasekera">LinkedIn</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

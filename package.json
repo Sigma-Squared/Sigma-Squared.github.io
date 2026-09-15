@@ -1,0 +1,16 @@
+{
+  "name": "chamurajasekera.me",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gen:lqip": "node scripts/gen-lqip.mjs",
+    "dev": "npm run gen:lqip && astro dev",
+    "build": "npm run gen:lqip && astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^7.3.2",
+    "sharp": "^0.35.4"
+  }
+}

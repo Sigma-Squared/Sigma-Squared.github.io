@@ -1,0 +1,97 @@
+---
+/**
+ * An optimized image with a zero-JS blur-up placeholder.
+ *
+ * The tiny base64 LQIP is painted as a background on the wrapper. An <img> that has
+ * not decoded yet renders as transparent, so the blur shows through; once the real
+ * image decodes the browser paints it over the top. No load event, no script.
+ */
+import { Image } from 'astro:assets';
+import { getImage, getLqip } from '../lib/images';
+
+interface Props {
+  /** Path relative to src/images, e.g. "portfolio/reflex1.jpg". */
+  path: string;
+  alt: string;
+  /** CSS aspect-ratio for the frame. Omit to use the image's intrinsic ratio. */
+  ratio?: string;
+  sizes?: string;
+  widths?: number[];
+  /** Skip lazy-loading for above-the-fold images. */
+  eager?: boolean;
+  /** Absolutely fill the nearest positioned ancestor instead of flowing inline. */
+  fill?: boolean;
+  class?: string;
+}
+
+const {
+  path,
+  alt,
+  ratio,
+  sizes = '(min-width: 60rem) 30rem, 90vw',
+  widths = [320, 640, 960, 1440],
+  eager = false,
+  fill = false,
+  class: className,
+} = Astro.props;
+
+const image = getImage(path);
+const placeholder = getLqip(path);
+const aspect = ratio ?? `${image.width} / ${image.height}`;
+// Never upscale past the source.
+const scaled = widths.filter((w) => w <= image.width);
+if (scaled.length === 0) scaled.push(image.width);
+---
+
+<div
+  class:list={['blur-frame', fill && 'blur-frame--fill', className]}
+  style={{
+    // Applied inline so it reliably beats the component's own scoped `.blur-frame`
+    // rule regardless of stylesheet order.
+    ...(fill
+      ? { position: 'absolute', inset: '0' }
+      : { aspectRatio: aspect }),
+    ...(placeholder ? { '--lqip': `url("${placeholder}")` } : {}),
+  }}
+  data-has-placeholder={placeholder ? 'true' : undefined}
+>
+  <Image
+    src={image}
+    alt={alt}
+    widths={scaled}
+    sizes={sizes}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'sync' : 'async'}
+    fetchpriority={eager ? 'high' : 'auto'}
+  />
+</div>
+
+<style>
+  .blur-frame {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background-color: #efece4;
+  }
+
+  /* The blurred preview sits behind the real image and simply gets covered up. */
+  .blur-frame[data-has-placeholder]::before {
+    content: '';
+    position: absolute;
+    /* Overscan so the blur radius does not bleed transparent edges inward. */
+    inset: -5%;
+    background-image: var(--lqip);
+    background-size: cover;
+    background-position: center;
+    filter: blur(14px);
+    transform: scale(1.05);
+  }
+
+  .blur-frame :global(img) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
