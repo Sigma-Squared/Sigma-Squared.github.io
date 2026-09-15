@@ -12,6 +12,16 @@ const ENTITIES: Record<string, string> = {
   mdash: '\u2014',
   ndash: '\u2013',
   hellip: '\u2026',
+  times: '\u00d7',
+  divide: '\u00f7',
+  middot: '\u00b7',
+  bull: '\u2022',
+  deg: '\u00b0',
+  copy: '\u00a9',
+  reg: '\u00ae',
+  trade: '\u2122',
+  larr: '\u2190',
+  rarr: '\u2192',
 };
 
 /** Strip inline markup and decode entities, for meta tags and summaries. */

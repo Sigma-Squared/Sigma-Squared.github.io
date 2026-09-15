@@ -15,6 +15,7 @@
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
     "Times New Roman", Times, serif;
   --sans: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --measure: 34rem;
   --page: 46rem;
@@ -480,6 +481,16 @@ a:hover {
   font-size: 1.125rem;
 }
 
+.article__body code,
+.story__standfirst code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  padding: 0.1em 0.3em;
+  background: #efece4;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
 .article__body p + p {
   margin-top: 0.85em;
   text-indent: 1.5em;
@@ -496,6 +507,17 @@ a:hover {
 
 .plate {
   margin: 2.5rem 0 0;
+}
+
+/* The animated hero sits above the body text rather than after it. */
+.plate--lead {
+  margin: 0 0 2rem;
+}
+
+.plate--lead img {
+  margin-inline: auto;
+  border: 1px solid var(--rule);
+  background: #fff;
 }
 
 .plate + .plate {

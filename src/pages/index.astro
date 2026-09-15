@@ -111,7 +111,7 @@ const profile = getImage('profile.png');
     <div class="wrap wrap--wide">
       <h2 class="section__head label">Projects</h2>
       <p class="section__note">
-        Games, hackathon builds, and side projects from my school and university years.
+        Hardware, games, server plugins, and other things I build outside of work.
       </p>
       <ul class="stories">
         {
@@ -129,13 +129,13 @@ const profile = getImage('profile.png');
                 />
               ) : (
                 <div class="story__media story__media--blank" aria-hidden="true">
-                  Unity
+                  {project.placeholder}
                 </div>
               )}
               <h3 class="story__headline">
                 <a href={`/projects/${project.slug}`}>{project.title}</a>
               </h3>
-              <p class="story__standfirst">{firstSentence(project.description)}</p>
+              <p class="story__standfirst">{firstSentence(project.description[0])}</p>
               <p class="story__more">
                 <a href={`/projects/${project.slug}`}>Read more &rarr;</a>
               </p>
