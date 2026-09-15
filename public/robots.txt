@@ -3,8 +3,6 @@
 User-agent: *
 Allow: /
 
-# The Unity WebGL build is ~46MB of .unityweb binaries and /upload holds
-# unreferenced leftovers from the old site. Neither is indexable content, and
-# together they are most of the site's bytes.
+# The Unity WebGL build is ~46MB of .unityweb binaries: not indexable
+# content, and most of the site's bytes.
 Disallow: /unityss/Build/
-Disallow: /upload/
