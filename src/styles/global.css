@@ -76,10 +76,6 @@ a {
   text-decoration-color: var(--ink-faint);
 }
 
-a:hover {
-  text-decoration-color: var(--ink);
-}
-
 :focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 2px;
@@ -180,11 +176,6 @@ a:hover {
   text-transform: uppercase;
 }
 
-.masthead__bar a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-}
-
 /* --------------------------------------------------------------------------
    Lede
    -------------------------------------------------------------------------- */
@@ -264,11 +255,13 @@ a:hover {
 }
 
 .portrait {
+  /* Centred both ways within its grid cell. */
+  justify-self: center;
+  align-self: center;
   width: clamp(5rem, 22vw, 7.5rem);
   aspect-ratio: 1;
   object-fit: cover;
-  margin: 0.3rem 1.25rem 0.5rem 0;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-strong);
   filter: grayscale(1) contrast(1.05);
 }
 
@@ -425,11 +418,6 @@ a:hover {
   text-decoration: none;
 }
 
-.story__headline a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-
 .story__standfirst {
   color: var(--ink-soft);
   font-size: 1rem;
@@ -566,11 +554,6 @@ a:hover {
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 1px solid var(--ink);
-}
-
-.rule-link:hover {
-  color: var(--ink-faint);
-  border-bottom-color: var(--ink-faint);
 }
 
 /* -------------------------------------------------------------------------- */
