@@ -1,11 +1,10 @@
 /* ==========================================================================
    chamurajasekera.me
-   A typewriter theme: Cutive Mono on paper, hairline rules, no colour,
+   A typewriter theme: Courier Prime on paper, hairline rules, no colour,
    no shadows, no script.
 
-   Cutive Mono ships a single 400 weight and no italic, so hierarchy comes
-   from case, letter spacing and rules rather than from bold and oblique,
-   which the browser would otherwise synthesise.
+   Courier Prime ships real Regular, Bold, Italic and Bold Italic cuts, so
+   nothing here is synthesised.
    ========================================================================== */
 
 :root {
@@ -16,7 +15,7 @@
   --rule: #d6d4cc;
   --rule-strong: #07070a;
 
-  --type: "Cutive Mono", "Courier New", Courier, monospace;
+  --type: "Courier Prime", "Courier New", Courier, monospace;
   /* Kept as aliases so existing rules do not all need rewriting. */
   --serif: var(--type);
   --sans: var(--type);
@@ -56,9 +55,6 @@ body {
   line-height: 1.7;
   color: var(--ink);
   background: var(--paper);
-  /* Cutive Mono has a single light weight. A hairline stroke thickens the
-     strokes the way ribbon ink would, without faking a bold. */
-  -webkit-text-stroke: 0.04em currentColor;
 }
 
 img,
@@ -125,7 +121,7 @@ a:hover {
 .label {
   font-family: var(--sans);
   font-size: 0.6875rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -142,7 +138,7 @@ a:hover {
 
 .masthead__title {
   font-family: var(--type);
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(1.5rem, 6vw, 2.75rem);
   line-height: 1.1;
   letter-spacing: 0.08em;
@@ -179,7 +175,7 @@ a:hover {
   text-decoration: none;
   font-family: var(--sans);
   font-size: 0.6875rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -200,7 +196,7 @@ a:hover {
 }
 
 .lede__headline {
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(1.5rem, 5vw, 2.25rem);
   line-height: 1.25;
   letter-spacing: 0.01em;
@@ -320,7 +316,7 @@ a:hover {
 }
 
 .role__period {
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--ink-soft);
   font-variant-numeric: tabular-nums;
@@ -329,21 +325,19 @@ a:hover {
 .role__kind {
   margin-top: 0.35rem;
   font-size: 0.625rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .role__title {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.0625rem;
   line-height: 1.4;
 }
 
 .role__org {
-  /* No italic in Cutive Mono, and an underline would read as a link, so the
-     employer is simply set plain after the comma. */
-  color: var(--ink-soft);
+  font-style: italic;
 }
 
 .role__note {
@@ -421,7 +415,7 @@ a:hover {
 }
 
 .story__headline {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.35;
   letter-spacing: 0.01em;
@@ -447,7 +441,7 @@ a:hover {
   min-height: 2.75rem;
   font-family: var(--sans);
   font-size: 0.6875rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -463,7 +457,7 @@ a:hover {
 }
 
 .article__headline {
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(1.5rem, 5vw, 2.125rem);
   line-height: 1.25;
   letter-spacing: 0.01em;
@@ -567,7 +561,7 @@ a:hover {
   padding: 0.35rem 0;
   font-family: var(--sans);
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
