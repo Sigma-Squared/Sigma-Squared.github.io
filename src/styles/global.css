@@ -260,7 +260,7 @@ a {
   width: clamp(5rem, 22vw, 7.5rem);
   aspect-ratio: 1;
   object-fit: cover;
-  border: 1px solid var(--rule-strong);
+  border: 3px solid var(--rule-strong);
   filter: grayscale(1) contrast(1.05);
 }
 
