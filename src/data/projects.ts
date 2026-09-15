@@ -20,22 +20,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: 'thebackgroundfactory',
-    title: 'TheBackgroundFactory',
-    description:
-      '<a href="http://thebackgroundfactory.github.io/thebgfactory/">TheBackgroundFactory</a> is a website made by myself and two of my colleagues as a project for Local Hack Day 2015. It showcases several dynamic javascript backgrounds that we created, for other web developers to embed into their sites. All the HTML/CSS, hosting, etc. was made by me as well as one of the backgrounds.',
-    cover: { path: 'portfolio/bgfactory-thumbnail.png', alt: 'TheBackgroundFactory' },
-    gallery: [{ path: 'portfolio/thebgfactory.jpg', alt: 'TheBackgroundFactory' }],
-  },
-  {
-    slug: 'failsafe',
-    title: 'FailSafe',
-    description:
-      "FailSafe was a project myself and two friends created for McMaster's Engineering Challenge. I created the front-end app, which used multithreading and sockets to communicate via the network to a server in a safe. This allowed you to control and view the status of your safe remotely. This project was started and completed in 12 hours, and won 2nd place.",
-    cover: { path: 'portfolio/failsafe-thumbnail.png', alt: 'FailSafe' },
-    gallery: [{ path: 'portfolio/failsafe-app-resized.jpg', alt: 'FailSafe' }],
-  },
-  {
     slug: 'reflex',
     title: 'Reflex',
     description:
@@ -59,14 +43,6 @@ export const projects: Project[] = [
       { path: 'portfolio/blockout1.jpg', alt: 'Blockout' },
       { path: 'portfolio/blockout2.jpg', alt: 'Blockout' },
     ],
-  },
-  {
-    slug: 'inspiredby-tech',
-    title: 'InspiredBy.Tech',
-    description:
-      '<a href="http://www.inspiredby.tech">InspiredBy.Tech</a> is a website I created with two teammates for DeltaHacks 2016. The website was created to inspire young children to go into engineering and to be excited by technology, by featuring a set of interactive javascript games that provide entertainment as well as education. It won the ThinkEngineering Sponsor Challenge, as well as the best .TECH domain. &lt;<a href="http://devpost.com/software/inspiredby">Devpost</a>&gt;',
-    cover: { path: 'portfolio/inspiredby-thumbnail.png', alt: 'InspiredBy.Tech' },
-    gallery: [{ path: 'portfolio/inspiredby.png', alt: 'InspiredBy.Tech' }],
   },
   {
     slug: 'nightmare',
