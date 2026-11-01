@@ -76,10 +76,7 @@ const plain = toPlainText(project.description[0]);
       {
         project.playHref && (
           <div class="notice">
-            <p>
-              The game runs in the browser. It is a large download and needs a desktop
-              browser with a keyboard and mouse.
-            </p>
+            {project.playNote && <p>{project.playNote}</p>}
             <p>
               <a class="rule-link" href={project.playHref}>
                 Play {project.title} &rarr;
