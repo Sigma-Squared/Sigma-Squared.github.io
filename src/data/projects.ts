@@ -46,7 +46,7 @@ export const projects: Project[] = [
       'Practice blackjack basic strategy against a pixel-art table. Every decision is graded against the strategy chart, with a short explanation of the correct play, a scorecard, and a log of recent mistakes. A pullout chart outlines your last decision, and optional hints show the correct move before you commit.',
       'Settings cover surrender, insurance and the blackjack payout, 3:2 or 6:5, and the chart, hints and grading all follow them. The table deals from six decks, the dealer stands on soft 17, and doubling after a split is allowed. Everything is keyboard-driven, progress is saved in the browser, and it installs as a web app that works offline.',
       'Built with <a href="https://www.solidjs.com/">Solid</a>, TypeScript and <a href="https://vite.dev/">Vite</a>. The game itself is plain TypeScript with no framework code, covering cards, strategy, grading and round flow, with a separate layer wiring it to Solid.',
-      'Card art is <a href="https://greebles.itch.io/pixel-plebes">Pixel Plebes</a> by Devlyn JD; the pixel font is <a href="https://fonts.google.com/specimen/Jersey+10">Jersey 10</a>.',
+      'The look is inspired by <a href="https://www.playbalatro.com/">Balatro</a>. Card art is <a href="https://greebles.itch.io/pixel-plebes">Pixel Plebes</a> by Devlyn JD; the pixel font is <a href="https://fonts.google.com/specimen/Jersey+10">Jersey 10</a>.',
     ],
     playHref: 'https://bjt.chamurajasekera.me/',
     playNote:
